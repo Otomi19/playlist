@@ -5,7 +5,15 @@ var Artist = $("#Artiste").val();
 var link = $("#Linke").val();
 var img = $("#Imagee").val();
 var time = $("#Lenghte").val();
-$(".main").append("<div class='main'> <img src='"+img+"'> <p>"+Name+"</p> <p>"+Artist+"</p> <p>"+time+"</p> <a href='"+link+"'>Listen</a></div>");
+SongPlay(Playlist);
+let default = {
+Name:Name,
+Artist:Artist,
+img:img,
+link:link,
+time:time,
+};
+Playlist.push(default);
 });
 //come back and finsh
 
@@ -31,6 +39,16 @@ link: "https://www.youtube.com/watch?v=l0U7SxXHkPY",
 time: "5:15"
 };
 let Playlist= [song1,song2,song3];
-Playlist.forEach(function(song){
-$(".main").append("<div class='main'> <img src='"+song.img+"'> <p>"+song.Name+"</p> <p>"+song.Artist+"</p> <p>"+song.time+"</p> <a href='"+song.link+"'>Listen</a></div>");  
+SongPlay(Playlist);
+function SongPlay(myArray){
+myArray.forEach(function(song){
+  $('.main').append(`
+  <p>${song.Name}</p>
+  <p>${song.Artist}</p>
+  <img src="${song.img}">
+  <a href ="${song.link}">Listen</a>
+  <p>${song.time}</p>
+  `);
 });
+};
+

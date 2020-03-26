@@ -4,11 +4,12 @@
 }
 .main{
     display: flex;
-    justify-content: space-around;
-    height:75px;
-    width:75px;
+    justify-content: space-between;
+    height:70px;
+    width:70px;
+    /* flex-direction: column; */
 }
 .add{
-    width: 100px;
+    width: 50px;
     height:50px;
 }
